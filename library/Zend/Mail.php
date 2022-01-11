@@ -1231,6 +1231,9 @@ class Zend_Mail extends Zend_Mime_Message
      */
     protected function _filterName($name)
     {
+        if(is_null($name)) {
+            return null;
+        }
         $rule = ["\r" => '',
                       "\n" => '',
                       "\t" => '',
